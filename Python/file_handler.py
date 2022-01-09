@@ -1,0 +1,1 @@
+#functions include - replace ,find, suggestions using tries, search-history using cache, multi prigramming using threads , locks

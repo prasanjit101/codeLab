@@ -61,6 +61,4 @@ while($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)){
         "---------------------------------<br/>";
 }
 
-
-
 ?>

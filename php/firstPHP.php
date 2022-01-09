@@ -99,14 +99,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 //get method
+echo "Hello" . $_GET['Example'] . " at " . $_GET['web'];  
+
+//request method
 if ($_SERVER["REQUEST_METHOD"] == "POST") { 
     $name = $_REQUEST['fname']; 
-    if (empty($name)) {
+    if (empty($name)) { 
         echo "Name is empty"; 
     } 
     else { 
         echo $name; 
-    } 
+    }
 }
 
 //isset($x) => checks if the value of the variable is set
