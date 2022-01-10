@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <title>Markdown Previewer</title>
+    </head>
+    <body>
+        <h2>Markdown Previewer</h2>
+
+        <div class="main">
+            <div class="row">
+                <div class="editor_c">
+                    <textarea id="editor">Enter your markdown text here </textarea>
+                </div>
+                <div class="preview_c">
+                    <div id="preview"></div>
+                </div>
+            </div>
+          </div>
+        <script src="./script.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/1.2.7/marked.min.js" integrity="sha512-Sl04EWeJ0QgILm83WoubQbZqh71aWLJP8xnswnKSBI37S+ZtrWVtSHmd1YaYYdC1g9PWN1siY7KO2jU3HtCVHA==" crossorigin="anonymous"></script>
+    </body>
+</html>
