@@ -1,3 +1,3 @@
 # Code Lab
 
-My playground of different languages, where I explore them with different minimal projects.
+My playground of different languages, frameworks and technologies . Where I explore them with different minimal projects.
