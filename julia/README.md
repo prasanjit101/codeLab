@@ -26,4 +26,7 @@ Collection of julia programs that are result of my endeavour with the language
   - runge_kutta_2
   - runge_kutta_4
   - polars_to_cartesian
-  
+
+
+### Get introduced to Julia by The [julia Crash course by Derek banas](https://www.youtube.com/watch?v=sE67bP2PnOo)
+A cheat sheet 'Julia' by Derek Banas is also included in the directory
