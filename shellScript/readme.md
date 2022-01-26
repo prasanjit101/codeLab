@@ -1,0 +1,1 @@
+The cheat sheet is taken from derek banas' tutorial on shell scripting
