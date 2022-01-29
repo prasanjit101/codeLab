@@ -38,7 +38,7 @@ I. Intro
 # The #! shebang tells the system the interpreter to use for the script
 #!/bin/bash
 # Comment
-echo 'Hello World' # Print the string to the screen
+echo 'Hello World' # print the string to the screen
 
 	a. To make it executable chmod 755 hello_world
 	

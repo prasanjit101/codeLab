@@ -1,0 +1,49 @@
+A - append to the end of line
+x - delete the character under the cursor
+b - traverse word  backward
+w - traverse word forward
+dw - delete a word forward
+d$ - delete till the end of the line
+dd - delete the entire line
+0 - move to the start of the line
+$ - move to the end of line
+w - word
+e - end of the word
+u - undo
+U - undo all operations on the line
+ctrl+R - redo
+[ operator number motion ] - eg- d2w - it deletes two word
+p - puts back text just deleted under current cursor position
+r - replace
+ctrl+G - displays your location on the file
+G - moves to the end of the file 
+number G - mover to the line number
+gg - moves to the line beginning
+/phrase - search the phrase in the forward direction
+?phrase - search the phrase in the backward direction
+n - to next occurence in the same direction
+N - to next occurence in the opposite direction
+
+Typing  %  while the cursor is on a (,),[,],{, or } goes to its match.
+
+To substitute new for the first old in a line type    :s/old/new
+To substitute new for all 'old's on a line type       :s/old/new/g
+To substitute phrases between two line #'s type       :#,#s/old/new/g
+To substitute all occurrences in the file type        :%s/old/new/g
+To ask for confirmation each time add 'c'             :%s/old/new/gc
+
+:!COMMAND : executes the external command
+
+:r FILENAME : puts content of the file filename below the cursor
+
+The  y  operator yanks (copies) text,  p  puts (pastes) it
+
+Typing ":set xxx" sets the option "xxx".  Some options are:
+        'hls' 'hlsearch'        highlight all matching phrases
+     You can either use the long or the short option name.
+
+Prepend "no" to switch an option off:   :set noic
+
+>>
+When typing a  :  command, press CTRL-D to see possible completions.
+     Press <TAB> to use one completion
