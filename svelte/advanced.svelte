@@ -1,4 +1,4 @@
-<!-- 
+
 create progress component : [https://learn.svelte.dev/tutorial/tweens]
 a circle that follows mouse pointer : [https://learn.svelte.dev/tutorial/springs]
 transition : [https://learn.svelte.dev/tutorial/transition]
@@ -19,7 +19,7 @@ svelte:element [https://learn.svelte.dev/tutorial/svelte-element]
 svelte:window [https://learn.svelte.dev/tutorial/svelte-window]
 debug tag : [https://learn.svelte.dev/tutorial/debug]
 
- -->
+
 
  <!-- advanced binding -->
  <!-- Elements with a contenteditable attribute support textContent and innerHTML bindings: -->

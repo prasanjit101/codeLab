@@ -1,23 +1,23 @@
-<!-- 
+
 RULES: 
 > For updating arrays and objects state, add an assignment ( eg - numbers = [...numbers, numbers.length + 1];)
-> It's a good practice to put the style section in the bottom
+> Good layout for svelte files in my opinion : script -> html code -> styles
 > Event modifiers in svelte: once, self, trusted, preventDefault
 > To forward events :  eg - an on:message event directive without a value means 'forward all message events'.[https://learn.svelte.dev/tutorial/event-forwarding]
 > Example to play audio [https://learn.svelte.dev/tutorial/dom-event-forwarding] & dom forwarding
 > Logo animation example [https://learn.svelte.dev/tutorial/onmount]
 
--->
+
 
 <script>
 	export let answer = 'a mystery'; // default props
 	import Nested from './Nested.svelte';//Component names are always capitalised
 
-	let src = '/image.gif';
+	let src1 = '/image.gif';
 	let name = 'Rick Astley';
 	let numbers = [];
 
-	let string = `this string contains some <strong>HTML!!!</strong>`;
+	let htmlString = `this string contains some <strong>HTML!!!</strong>`;
 	let a = 0;
 	let b = 3;
 
@@ -32,9 +32,9 @@ RULES:
 	}
 </style>
 
-<img {src} alt="{name} dances." />
+<img src={src1} alt="{name} dances." />
 <p>This is a paragraph.</p>
-<p>{@html string}</p>
+<p>{@html htmlString}</p>
 <Nested/>
 
 <!-- reactivity -->
@@ -59,8 +59,8 @@ RULES:
 </button>
 <p>{count} doubled is {doubled}</p>
 
-<PackageInfo {...pkg} /> 
 <!-- props will be destructured -->
+<PackageInfo {...pkg} /> 
 
 <!-- if blocks -->
 {#if count > 10}
@@ -166,7 +166,7 @@ RULES:
 
 <!-- skipped : https://learn.svelte.dev/tutorial/update : beforeUpdate. afterUpdate -->
 
-<!-- Stores (write in a js file, for demonstration used inside script tag-->
+<!-- Stores (write in a js file. For demonstration used inside a script tag-->
 <script>
 // writable stores
 	import { writable } from 'svelte/store';
@@ -191,7 +191,9 @@ RULES:
 	onDestroy(unsubscribe);
 
 // readable stores
-	//The first argument to readable is an initial value, which can be null or undefined if you don't have one yet. The second argument is a start function that takes a set callback and returns a stop function. The start function is called when the store gets its first subscriber; stop is called when the last subscriber unsubscribes.
+	//The first argument to readable is an initial value, which can be null or undefined if you don't have one yet. 
+	//The second argument is a start function that takes a set callback and returns a stop function. The start function is called when the store gets its first subscriber; 
+	//stop is called when the last subscriber unsubscribes.
 	import { readable, derived } from 'svelte/store';
 
 	export const time = readable(new Date(), function start(set) {
