@@ -76,7 +76,7 @@ Just as +layout.svelte files create UI for every child route, +layout.server.js 
 ------------------------------
 
 Setting Headers:
-Inside a load function you have access to a setHeaders function, which — unsurprisingly — can be used to set headers on the response.
+Inside a load function you have access to a setHeaders function, which can be used to set headers on the response.
 Most commonly, you'd use it to customise caching behaviour with the Cache-Control response header
 
 src/routes/+page.server.js
@@ -92,7 +92,7 @@ src/routes/+page.server.js
 
 Cookies:
 The setHeaders function can't be used with the Set-Cookie header. Instead, you should use the cookies API.
-Instead can be used as:
+can be used as:
 src/routes/+page.server.js
 <script>
     export function load({ cookies }) {
