@@ -1,0 +1,285 @@
+# Redis commands
+
+quit - exit the redis-cli shell
+
+SET key value - set a key to a value
+
+GET key - get the value of a key
+
+DEL key - delete a key
+
+FLUSHALL - delete all keys
+
+EXPIRE key 10 - set a key to expire in 10 seconds
+
+TTL key - check how many seconds a key has left
+
+SET key value EX 10 - set key to value and expire in 10 seconds
+
+SET key value PX 10000 - set key to value and expire in 10 seconds
+
+SET key value NX - set key to value if it does not exist
+
+SET key value XX - set key to value if it does exist
+
+MSET key value key value ... - set multiple keys to values
+
+MGET key key ... - get multiple keys
+
+INCR key - increment the integer value of a key by one
+
+DECR key - decrement the integer value of a key by one
+
+INCRBY key 5 - increment the integer value of a key by 5
+
+DECRBY key 5 - decrement the integer value of a key by 5
+
+RPUSH key value - append a value to a list
+
+LPUSH key value - prepend a value to a list
+
+LRANGE key start stop - list a subset of a list
+
+LLEN key - get the length of a list
+
+LPOP key - remove the first element of a list
+
+RPOP key - remove the last element of a list
+
+LSET key index value - set the value of an element in a list by its index
+
+LREM key count value - remove elements from a list
+
+SADD key member - add a member to a set
+
+SREM key member - remove a member from a set
+
+SISMEMBER key member - check if a member is in a set
+
+SMEMBERS key - get all members in a set
+
+KEYS * - get all keys
+
+KEYS *pattern* - get all keys matching pattern
+
+RANDOMKEY - get a random key
+
+RENAME key newkey - rename a key
+
+RENAMENX key newkey - rename a key, fail if newkey exists
+
+TYPE key - get the type of a key
+
+EXISTS key - check if a key exists
+
+SORT key BY pattern LIMIT start stop - sort a list and return the sorted elements
+
+SORT key ALPHA - sort a list of strings in alpha order
+
+SORT key DESC - sort a list of strings in descending order
+
+SORT key BY pattern GET pattern - sort a list and return the sorted elements, get values from other keys
+
+SORT key BY pattern STORE destination - sort a list and return the sorted elements, store the result in a key
+
+BLPOP key timeout - remove and get the first element of a list, or block until one is available
+
+BRPOP key timeout - remove and get the last element of a list, or block until one is available
+
+BRPOPLPUSH source destination timeout - pop an element from a list, push it to another list and return it; or block until one is available
+
+LINDEX key index - get an element from a list by its index
+
+LINSERT key BEFORE pivot value - insert an element before or after another element in a list
+
+LINSERT key AFTER pivot value - insert an element before or after another element in a list
+
+
+-- Sets
+
+SADD key member - add a member to a set
+
+SREM key member - remove a member from a set
+
+SISMEMBER key member - check if a member is in a set
+
+SMEMBERS key - get all members in a set
+
+SUNION key key ... - get the union of multiple sets
+
+SINTER key key ... - get the intersection of multiple sets
+
+SDIFF key key ... - get the difference between the first set and all successive sets
+
+SUNIONSTORE destination key key ... - get the union of multiple sets and store it in a key
+
+SINTERSTORE destination key key ... - get the intersection of multiple sets and store it in a key
+
+SDIFFSTORE destination key key ... - get the difference between the first set and all successive sets and store it in a key
+
+SCARD key - get the number of members in a set
+
+SPOP key - remove and return a random member from a set
+
+SRANDMEMBER key - get a random member from a set
+
+SMOVE source destination member - move a member from one set to another
+
+-- Hashes
+
+HSET key field value - set the value of a hash field
+
+HGET key field - get the value of a hash field
+
+HGETALL key - get all fields and values in a hash
+
+HDEL key field - delete a hash field
+
+HLEN key - get the number of fields in a hash
+
+HEXISTS key field - check if a field exists in a hash
+
+HINCRBY key field increment - increment the integer value of a hash field by a value
+
+HMSET key field value field value ... - set multiple fields in a hash
+
+HMGET key field field ... - get the values of multiple fields in a hash
+
+HKEYS key - get all fields in a hash
+
+HVALS key - get all values in a hash
+
+HSETNX key field value - set the value of a hash field, only if the field does not exist
+
+HINCRBYFLOAT key field increment - increment the float value of a hash field by a value
+
+-- Sorted Sets
+
+ZADD key score member - add a member to a sorted set, or update its score if it already exists
+
+ZREM key member - remove a member from a sorted set
+
+ZCARD key - get the number of members in a sorted set
+
+ZRANGE key start stop - get a range of members from a sorted set by index
+
+ZRANGEBYSCORE key min max - get a range of members from a sorted set by score
+
+ZCOUNT key min max - count the members in a sorted set with scores within the given values
+
+ZRANK key member - get the index of a member in a sorted set
+
+ZREVRANK key member - get the reverse index of a member in a sorted set
+
+ZSCORE key member - get the score of a member in a sorted set
+
+ZREMRANGEBYRANK key start stop - remove members from a sorted set by index
+
+ZREMRANGEBYSCORE key min max - remove members from a sorted set by score
+
+ZINCRBY key increment member - increment the score of a member in a sorted set
+
+ZUNIONSTORE destination numkeys key key ... - add multiple sorted sets and store the resulting sorted set in a new key
+
+ZINTERSTORE destination numkeys key key ... - intersect multiple sorted sets and store the resulting sorted set in a new key
+
+ZRANGEBYLEX key min max - get a range of members from a sorted set by lexicographical range
+
+ZLEXCOUNT key min max - count the members in a sorted set with scores within the given values
+
+ZREMRANGEBYLEX key min max - remove members from a sorted set by lexicographical range
+
+-- Pub/Sub
+
+SUBSCRIBE channel - listen for messages published to a channel
+
+UNSUBSCRIBE channel - stop listening for messages posted to a channel
+
+PUBLISH channel message - post a message to a channel
+
+PSUBSCRIBE pattern - listen for messages published to channels matching a given pattern
+
+PUNSUBSCRIBE pattern - stop listening for messages posted to channels matching a given pattern
+
+PUBSUB subcommand [argument [argument ...]] - inspect the state of the Pub/Sub subsystem
+
+-- Transactions
+
+MULTI - mark the start of a transaction block
+
+EXEC - execute all commands issued after MULTI
+
+DISCARD - discard all commands issued after MULTI
+
+WATCH key key ... - watch a key for changes, and execute a transaction if the key is modified before EXEC
+
+UNWATCH - unwatch all keys
+
+-- Scripting
+
+EVAL script numkeys key key ... arg arg ... - execute a Lua script server side
+
+EVALSHA sha1 numkeys key key ... arg arg ... - execute a Lua script server side, cached
+
+SCRIPT EXISTS script script ... - check existence of scripts in the script cache
+
+SCRIPT FLUSH - remove all scripts from the script cache
+
+SCRIPT KILL - kill the currently executing Lua script
+
+SCRIPT LOAD script - load a Lua script into the script cache
+
+-- Connection
+
+AUTH password - authenticate to the server
+
+ECHO message - echo the given string
+
+PING - ping the server
+
+QUIT - close the connection
+
+SELECT index - change the selected database for the current connection
+
+-- Server
+
+BGREWRITEAOF - asynchronously rewrite the append-only file
+
+BGSAVE - asynchronously save the dataset to disk
+
+CLIENT KILL ip:port - kill the connection of a client
+
+CLIENT LIST - get the list of client connections
+
+CLIENT GETNAME - get the current connection name
+
+CLIENT SETNAME connection-name - set the current connection name
+
+CONFIG GET parameter - get the value of a configuration parameter
+
+CONFIG SET parameter value - set a configuration parameter to the given value
+
+CONFIG RESETSTAT - reset the stats returned by INFO
+
+DBSIZE - get the number of keys in the selected database
+
+DEBUG OBJECT key - get debugging information about a key
+
+DEBUG SEGFAULT - make the server crash
+
+FLUSHALL - remove all keys from all databases
+
+FLUSHDB - remove all keys from the current database
+
+INFO [section] - get information and statistics about the server
+
+LASTSAVE - get the UNIX time stamp of the last successful save to disk
+
+MONITOR - listen for all requests received by the server in real time
+
+SAVE - synchronously save the dataset to disk
+
+SHUTDOWN [NOSAVE] [SAVE] - Synchronously save the dataset to disk and then shut down the server
+
+SLAVEOF host port - make the server a slave of another instance, or promote it as master
+
