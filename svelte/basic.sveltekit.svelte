@@ -108,7 +108,7 @@ src/routes/+page.server.js
 
 ------------------------------
 
-The $lib alias:
+The $lib alias inside src folder:
 Anything inside this directory can be accessed by any module in src via the $lib alias.
 <script>
 	import { message } from '$lib/message.js';// inside message js : export const message = 'hello from $lib/message';

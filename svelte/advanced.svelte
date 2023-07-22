@@ -18,7 +18,7 @@ Setcontext & getContext: [https://learn.svelte.dev/tutorial/context-api]
 svelte:element [https://learn.svelte.dev/tutorial/svelte-element]
 svelte:window [https://learn.svelte.dev/tutorial/svelte-window]
 debug tag : [https://learn.svelte.dev/tutorial/debug]
-
+Search Feature: [https://learn.svelte.dev/tutorial/slot-props]
 
 
  <!-- advanced binding -->
