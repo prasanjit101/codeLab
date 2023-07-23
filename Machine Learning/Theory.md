@@ -170,3 +170,6 @@ Procedure:
 
 * expectation-maximization algorithm - An iterative method for finding maximum likelihood or maximum a posteriori estimates of parameters in statistical models, where the model depends on unobserved latent variables.
 * Principal Component Analysis (PCA) - A method of dimensionality reduction that uses linear combinations of features to reduce the dimensionality of a dataset.
+  Purpose - 
+  1. Minimize projection residuals
+  2. Maximize variance of projected data
