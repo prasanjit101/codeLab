@@ -43,7 +43,8 @@
 * Recall - The number of true positives divided by the number of true positives plus the number of false negatives.
 * f1-score - The harmonic mean of precision and recall.
 * class label
-* 
+* residual - Error between the predicted value and the actual value
+* fit - The process of training a machine learning model.
 
 
 
@@ -138,3 +139,34 @@ The input data is assigned weights and biases and then passed through an activat
 W0,new = W0,old + a*
 
 
+
+
+## Linear regression
+
+* Normality - The assumption that the data follows a normal distribution.
+* Homoskedasticity - The assumption that the variance of the error term is constant for all values of the independent variables.
+
+### Evaluating linear regression models
+
+1. Mean absolute error (MAE) - The average of the absolute values of the errors between the predicted values and the actual values.
+   sum i to n(|(yreal)i - (ypred)i|) / N
+2. Mean squared error (MSE) - The average of the squared errors between the predicted values and the actual values.
+   sum i to n((yreal)i - (ypred)i)^2 / N
+
+3. Root mean squared error (RMSE) - The square root of the average of the squared errors between the predicted values and the actual values.
+    sqrt(sum i to n((yreal)i - (ypred)i)^2 / N)
+
+4. R-squared - The proportion of the variance in the dependent variable that is predictable from the independent variables.
+
+
+
+
+## K-means clustering
+
+Procedure:
+1. Choose 3 random points to be centroid
+2. calculate distance b/w points and centroid, assigning points to closest centroid
+3. compute new centroids
+
+* expectation-maximization algorithm - An iterative method for finding maximum likelihood or maximum a posteriori estimates of parameters in statistical models, where the model depends on unobserved latent variables.
+* Principal Component Analysis (PCA) - A method of dimensionality reduction that uses linear combinations of features to reduce the dimensionality of a dataset.
